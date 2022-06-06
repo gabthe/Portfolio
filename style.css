@@ -91,8 +91,10 @@ main {
 }
 
 #close:active {
-    border: 2px solid black;
-    box-shadow: 1px 1px black;
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
     cursor: pointer;
 }
 
@@ -259,9 +261,10 @@ main {
 }
 
 #option:active {
-    border: 2px solid black;
-    box-shadow: 1px 1px black;
-    font-size: .95rem;
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
     cursor: pointer;
 }
 
@@ -305,8 +308,10 @@ main {
 }
 
 #close-small:active {
-    border: 2px solid black;
-    box-shadow: 1px 1px black;
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
     cursor: pointer;
 }
 
