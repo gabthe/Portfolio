@@ -7,34 +7,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <script defer src="scripts/scripts.js"></script>
 </head>
 
 <body>
     <div id="geral-container">
         <header>
             <div class="total-area">
-                <h1 id="name">Gabriel Theodoro</h1>
-
-                <nav class="options">
-                    <a target="_blank"
-                        href="https://www.linkedin.com/in/gabriel-theodoro-ferreira-680b1a18a/">Linkedin</a>
-                    <a target="_blank" href="https://github.com/gabthe">GitHub</a>
-                    <a href="#here">Habilidades</a>
-                    <p id="close" href="">X</p>
-                </nav>
-
+                <div class="header-options">
+                    <h1 id="name">Gabriel Theodoro</h1>
+                    <nav class="options">
+                        <a target="_blank"
+                            href="https://www.linkedin.com/in/gabriel-theodoro-ferreira-680b1a18a/">Linkedin</a>
+                        <a target="_blank" href="https://github.com/gabthe">GitHub</a>
+                        <a href="#here">Habilidades</a>
+                        <p id="close" href="">X</p>
+                    </nav>
+                </div>
                 <div class="chamada">
-                    <p id="nickname">@gabtheodoro</p>
-                    <p id="profession">Desenvolvedor Front-end</p>
+                    <p class="profession typing-animation">Desenvolvedor Front-end</p>
                 </div>
 
-                <p class="projects">Meus Projetos</p>
 
-                <div class="container-projects">
-                    <div id="menubar">
-                        <p>Principais Projetos</p>
+            </div>
+
+        </header>
+
+        <main>
+
+            <p class="projects">Meus Projetos</p>
+
+            <div class="total-area-main-projects">
+
+                <div id="menubar">
+                    <p>Principais Projetos</p>
+                    <div class="close-increase-buttons">
+                        <p id="minimize-small2">_</p>
                         <p id="close-small" href="">X</p>
                     </div>
+                </div>
+
+                <div class="container-projects">
                     <div class="project-description">
                         <a id="project-name" href="">Em breve</a>
                         <div class="ok-close">
@@ -59,28 +72,41 @@
 
                 </div>
 
-                <div id="more-projects">
-                    <a href="">Todos os projetos</a>
-                </div>
             </div>
-        </header>
 
-        <main>
+            <div id="more-projects">
+                <a href="">Todos os projetos</a>
+            </div>
+
             <p id="here"></p>
             <div class="total-area-main">
                 <div id="menubar">
                     <p>Habilidades</p>
-                    <p id="close-small" href="">X</p>
+                    <div class="close-increase-buttons">
+                        <p id="minimize-small">_</p>
+                        <p id="close-small" href="">X</p>
+                    </div>
                 </div>
-                <img src="img/html.png" alt="Icone Javascript" id="icon-language">
-                <p>É a linguagem de marcação utilizada na construção de páginas da Web. Minha experiencia nessa
-                    linguagem é 1 mês.</p>
-                <img src="img/css.png" alt="" id="icon-language">
-                <p>É um mecanismo para adicionar estilo a um documento Web. Minha experiencia nessa linguagem é 1 mês.
-                </p>
-                <img src="img/js.png" alt="" id="icon-language">
-                <p>É uma linguagem de programação. Juntamente com HTML e CSS é uma das três principais tecnologias da
-                    Web. <br>Minha experiencia nessa linguagem é 1 mês.</p>
+                <div class="all-skills">
+                    <div class="skills">
+                        <img src="img/html.png" alt="Icone Javascript" id="icon-language">
+                        <p id="hiddable-skill">É a linguagem de marcação utilizada na construção de páginas da Web.
+                            Minha experiencia nessa
+                            linguagem é 1 mês.</p>
+                    </div>
+                    <div class="skills">
+                        <img src="img/css.png" alt="" id="icon-language">
+                        <p id="hiddable-skill">É um mecanismo utilizado para adicionar estilo a um documento Web. Minha
+                            experiencia nessa linguagem é 1 mês.
+                        </p>
+                    </div>
+                    <div class="skills">
+                        <img src="img/js.png" alt="" id="icon-language">
+                        <p id="hiddable-skill"> É uma linguagem de programação. Juntamente com HTML e CSS é uma das três
+                            principais tecnologias da
+                            Web. <br>Minha experiencia nessa linguagem é 1 mês.</p>
+                    </div>
+                </div>
             </div>
 
             <div class="main-projects">

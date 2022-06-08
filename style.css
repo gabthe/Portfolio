@@ -35,13 +35,13 @@ main {
     background-attachment: fixed;
 }
 .total-area {
-    display: grid;
-    grid-template-columns: repeat(5, minmax(min-content, 20%));
-    grid-template-rows: repeat(2, 3fr) 1fr 3fr 3fr 1fr;
-    justify-items: center;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
     align-items: center;
-    height: 100vh;
+    height: fit-content;
     width: 100%;
+    height: 25vh;
     background-image: url(img/site-background.jpg);
     background-position: center;
     background-size: cover;
@@ -49,10 +49,18 @@ main {
     background-attachment: fixed;
 }
 
+.header-options {
+    display: flex;
+    width: 80%;
+    align-items: center;
+    justify-content: space-around;
+}
+
 .options {
     display: flex;
     font-size: 1.5rem;
     gap: 24px;
+    height: 42px;
     background: linear-gradient(to right, #33ccff 0%, #ff99cc 100%);
     padding: 4px 8px;
     grid-column: 3/6;
@@ -117,8 +125,6 @@ main {
     justify-content: center;
     flex-wrap: wrap;
     gap: 12px;
-    grid-column: 1/-1;
-    grid-row: 2/3;
 }
 
 #nickname {
@@ -131,25 +137,42 @@ main {
     border-radius: 5px;
 }
 
-#profession {
+.profession {
     font-weight: bolder;
-    box-shadow: 2px 2px black;
-    border: 1px solid black;
-    padding: 4px;
     display: flex;
+    border-right: 2px solid black;
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: 1.25rem;
-    min-width: 250px;
+    font-size: 1.75rem;
+    padding-right: 4px;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
-#profession:hover {
-    border: 1px solid darkgray;
-    background-color: darkgray;
+.typing-animation {
+    animation: blinkCursor 500ms infinite normal, typing 2s steps(40) 1s normal both;
+}
+
+@keyframes blinkCursor {
+    from {
+        border-right-color: black;
+    } to {
+        border-right-color: transparent;
+    }
+}
+
+@keyframes typing {
+    from {
+        width: 0px;
+    }
+    to {
+        width: 275px;
+    }
 }
 
 .projects {
+    margin: 12px 0px;
     font-size: 1.5rem;
     border: 1px solid black;
     padding: 2px;
@@ -162,23 +185,25 @@ main {
     background-color: darkgray;
 }
 
-.container-projects {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 36px 1fr;
-    column-gap: 4px;
-    row-gap: 4px;
-    padding: 0px 0px;
-    border: 1px solid black;
-    width: 95%;
-    height: 95%;
-    grid-row: 4/6;
-    grid-column: 1/-1;
-    min-width: 750px;
-    max-width: 60%;
+.total-area-main-projects {
     border-top: 2px solid white;
     border-left: 2px solid white;
-    box-shadow: 2px 2px rgb(39, 39, 39);
+    border-right: 2px solid rgb(0, 0, 0);
+    border-bottom: 2px solid rgb(0, 0, 0);
+    background-color: darkgray;
+    
+}
+
+.total-area-main-projects p {
+    font-size: 1.5rem;
+}
+
+.container-projects {
+    display: flex;
+    height: min-content;
+    width: fit-content;
+    min-width: 320px;
+    height: fit-content;
 }
 
 #menubar {
@@ -186,8 +211,9 @@ main {
     align-items: center;
     justify-content: space-between;
     background: linear-gradient(to right, #33ccff 0%, #ff99cc 100%);
+    min-width: 300px;
     width: 100%;
-    height: 100%;
+    height: 36px;
     padding: 0px 2px;
     grid-column: 1/-1;
 }
@@ -202,6 +228,9 @@ main {
     justify-content: center;
     align-items: center;
     text-align: center;
+    height: 400px;
+    width: 32vw;
+    max-width: 320px;
     padding-bottom: 12px;
     background-color: darkgray;
     border: 1px solid black;
@@ -219,8 +248,7 @@ main {
     border-right: 2px solid black;
     width: 225px;
     height: 48px;
-    grid-row: -1/-2;
-    grid-column: 1/-1;
+    margin: 12px 0px;
 }
 
 #more-projects a {
@@ -269,24 +297,68 @@ main {
 }
 
 .total-area-main {
-    display: grid;
-    justify-items: center;
-    align-items: center;
-    grid-template-columns: 2fr 8fr;
-    grid-template-rows: 36px 18fr 18fr 18fr;
+    display: flex;
+    flex-direction: column;
     background-color: darkgray;
     border-top: 2px solid white;
     border-left: 2px solid white;
     border-right: 2px solid black;
     border-bottom: 2px solid black;
-    height: 100vh;
-    width: 80vw;
-    margin-top: 6px;
-    margin-bottom: 6px;
+    height: min-content;
+    padding-bottom: 12px;
+    width: fit-content;
+    margin: 12px;
 }
 
+.skills {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-top: 22px;
+    padding-left: 12px;
+    /* display: none; */
+}
+
+.close-increase-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+
+/* .skills>p, .skills>img {
+    display: none;
+} */
+
 .total-area-main p {
-    font-size: 2rem;
+    font-size: 1.5rem;
+}
+
+#minimize-small, #minimize-small2 {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+    background-color: darkgray;
+    user-select: none;
+    height: 32px;
+    width: 32px;
+}
+
+#minimize-small:hover, #minimize-small2:hover {
+    cursor: pointer;
+}
+
+#minimize-small:active, #minimize-small2:active {
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    cursor: pointer;
 }
 
 #close-small {
@@ -298,9 +370,9 @@ main {
     border-bottom: 2px solid black;
     border-right: 2px solid black;
     background-color: darkgray;
-    width: 2rem;
-    height: 2rem;
     user-select: none;
+    height: 32px;
+    width: 32px;
 }
 
 #close-small:hover {
@@ -356,46 +428,26 @@ main {
         grid-template-columns: repeat(2, 50%);
         grid-template-rows: 80px 80px 100px 50px min-content 50px;
     }
-
-    #name {
-        grid-column: 1/3;
-        grid-row: 1/2;
-    }
-    .options {
-        grid-row: 2/3;
-        grid-column: 1/-1;
-    }
-
-    .chamada {
-        grid-row: 3/4;
-        grid-column: 1/-1;
-    }
-
-    .projects {
-        grid-row: 4/5;
-        grid-column: 1/-1;
+    .skills {
+        flex-direction: column;
     }
 
     .container-projects {
-        background-color: darkgray;
-        grid-template-columns: 1fr;
-        grid-template-rows: 36px repeat(auto-fit, 400px);
-        column-gap: 0px;
-        height: min-content;
-        grid-row: 5/6;
-        grid-column: 1/4;
-        min-width: 320px;
+        flex-direction: column;
+    }
+
+    .header-options {
+        flex-direction: column;
+    }
+
+    .chamada {
+        flex-direction: column;
+        align-items: center;
     }
 
     #menubar {
         width: 100%;
         height: 100%;
-    }
-
-    .project-description ,.project-description1 , .project-description2 {
-        grid-column: 1/-1;
-        min-height: 400px;
-        width: 100%;
     }
 
     #more-projects {
@@ -409,9 +461,13 @@ main {
         align-items: center;
         text-align: center;
         grid-template-columns: 1fr;
-        grid-template-rows: 36px repeat(6, min-content);
+        grid-template-rows: 36px repeat(6, fit-content);
         row-gap: 32px;
         height: fit-content;
+    }
+    .project-description ,.project-description1 , .project-description2 {
+        min-height: 400px;
+        width: 100%;
     }
 }
 
@@ -425,44 +481,31 @@ main {
         grid-template-rows: 80px 80px 100px 50px min-content 50px;
     }
 
-    #more-projects {
-        grid-row: -1/-2;
-        grid-column: 1/-1;
+    .header-options {
+        flex-direction: column;
+    }
+
+    .chamada {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .skills {
+        flex-direction: column;
+    }
+
+    .container-projects {
+        flex-direction: column;
     }
 
     #name {
-        grid-column: 1/3;
-        grid-row: 1/2;
         margin: 8px;
         padding: 8px;
     }
     .options {
         width: min-content;
-        grid-row: 2/3;
-        grid-column: 1/-1;
-        gap: 4px;
+        gap: 1.5vw;
         padding: 4px 8px;
-    }
-
-    .chamada {
-        grid-row: 3/4;
-        grid-column: 1/-1;
-    }
-
-    .projects {
-        grid-row: 4/5;
-        grid-column: 1/-1;
-    }
-
-    .container-projects {
-        background-color: darkgray;
-        grid-template-columns: 1fr;
-        grid-template-rows: 24px repeat(auto-fill, 400px);
-        column-gap: 0px;
-        height: min-content;
-        grid-row: 5/6;
-        grid-column: 1/-1;
-        min-width: 320px;
     }
 
     #menubar {
@@ -471,7 +514,6 @@ main {
     }
 
     .project-description ,.project-description1 , .project-description2 {
-        grid-column: 1/-1;
         min-height: 400px;
         width: 100%;
     }
@@ -481,7 +523,7 @@ main {
         align-items: center;
         text-align: center;
         grid-template-columns: 1fr;
-        grid-template-rows: 36px repeat(6, min-content);
+        grid-template-rows: 36px repeat(6, fit-content);
         row-gap: 32px;
         height: fit-content;
     }
